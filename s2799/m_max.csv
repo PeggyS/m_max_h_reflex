@@ -1,0 +1,17 @@
+date,session,side,muscle,mep_ampl_uv,pp_stim_ampl_ma,pp_stim_pw_us,mep_auc_uvms,mep_dur_ms,auc_stim_ampl_ma,auc_stim_pw_us
+01/29/2019,pre,inv,Gastroc,17811,100,200,69932,33,100,200
+03/12/2019,mid,inv,Gastroc,26352.75,100,150,NaN,NaN,NaN,NaN
+04/19/2019,post,inv,Gastroc,24163.08,57,100,NaN,NaN,NaN,NaN
+NaT,followup,inv,Gastroc,200,NaN,NaN,NaN,NaN,NaN,NaN
+01/29/2019,pre,inv,TA,8650.28,83,150,NaN,NaN,NaN,NaN
+03/12/2019,mid,inv,TA,9108.99,28,150,NaN,NaN,NaN,NaN
+04/19/2019,post,inv,TA,8938.94,100,150,NaN,NaN,NaN,NaN
+NaT,followup,inv,TA,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+01/29/2019,pre,uninv,Gastroc,18376.96,100,150,NaN,NaN,NaN,NaN
+03/12/2019,mid,uninv,Gastroc,22347.99,60,100,NaN,NaN,NaN,NaN
+04/19/2019,post,uninv,Gastroc,21934.15,71,100,NaN,NaN,NaN,NaN
+NaT,followup,uninv,Gastroc,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+03/12/2019,mid,uninv,TA,14998.89,100,300,NaN,NaN,NaN,NaN
+04/19/2019,post,uninv,TA,13686.42,98,100,NaN,NaN,NaN,NaN
+NaT,followup,uninv,TA,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+01/29/2019,pre,uninv,ta,8665,83,150,39424,31.2,83,150

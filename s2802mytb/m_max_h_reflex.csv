@@ -1,0 +1,17 @@
+date,session,side,muscle,mep_ampl_uv,pp_stim_ampl_ma,pp_stim_pw_us,mep_auc_uvms,mep_latency_ms,mep_dur_ms,auc_stim_ampl_ma,auc_stim_pw_us,h_latency_ms,h_dur_ms,h_max_1_us,h_max_2_us,h_max_3_us
+07/06/2017,week5,uninv,flexors,28935,31,500,142511,4.6,16.9,31,500,21.7,13.9,14183.807373047,12638.854980469,12371.826171875
+NaT,week5,uninv,extensors,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaT,week5,inv,flexors,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaT,week5,uninv,extensors,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaT,week9,uninv,flexors,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaT,week9,uninv,extensors,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaT,week9,inv,flexors,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaT,week9,uninv,extensors,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaT,week13,uninv,flexors,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaT,week13,uninv,extensors,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaT,week13,inv,flexors,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaT,week13,uninv,extensors,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaT,week22,uninv,flexors,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaT,week22,uninv,extensors,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaT,week22,inv,flexors,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaT,week22,uninv,extensors,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN

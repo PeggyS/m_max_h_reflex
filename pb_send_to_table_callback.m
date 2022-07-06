@@ -1,0 +1,45 @@
+function pb_send_to_table_callback(source, ~, h_uitable, tbl_row)
+% get date, session, side, & muscle from info_struc
+h_fig = source.Parent;
+info = h_fig.UserData.info_struc;
+t = datetime(info.date, 'InputFormat','M/d/yy');
+
+% session = info.session;
+% subject = parse_fname_for_subj(info.filename);
+% side = lookup_inv_uninv(subject, info.side);
+% muscle = info.muscle;
+
+h_ampl_text = findobj(h_fig, 'Tag', 'ampl_text');
+ampl_max_h_line = h_ampl_text.UserData.ampl_max_h_line;
+h_auc_text = findobj(h_fig, 'Tag', 'auc_text');
+auc_max_h_line = h_auc_text.UserData.auc_max_h_line;
+h_dur_text = findobj(h_fig, 'Tag', 'duration_text');
+tmp = regexp(h_dur_text.String{2}, '(?<duration>\d*\.\d*)', 'names');
+if ~isempty(tmp)
+	m_duration = str2double(tmp.duration);
+else
+	m_duration = 0;
+end
+h_late_text = findobj(h_fig, 'Tag', 'latency_text');
+tmp = regexp(h_late_text.String{2}, '(?<latency>\d*\.\d*)', 'names');
+if ~isempty(tmp)
+	m_latency = str2double(tmp.latency);
+else
+	m_latency = 0;
+end
+
+% update the row
+h_uitable.Data.date(tbl_row) = t;
+h_uitable.Data.mep_ampl_uv(tbl_row) = round(ampl_max_h_line.UserData.m_wave_ampl);
+h_uitable.Data.pp_stim_ampl_ma(tbl_row) = ampl_max_h_line.UserData.stim_ampl;
+h_uitable.Data.pp_stim_pw_us(tbl_row) = ampl_max_h_line.UserData.stim_pw;
+h_uitable.Data.mep_auc_uvms(tbl_row) = round(auc_max_h_line.UserData.auc);
+h_uitable.Data.mep_latency_ms(tbl_row) = m_latency;
+h_uitable.Data.mep_dur_ms(tbl_row) = m_duration;
+h_uitable.Data.auc_stim_ampl_ma(tbl_row) = auc_max_h_line.UserData.stim_ampl;
+h_uitable.Data.auc_stim_pw_us(tbl_row) = auc_max_h_line.UserData.stim_pw;
+
+if ~h_uitable.UserData.table_changed
+	h_uitable.UserData.table_changed = true;
+end
+return
