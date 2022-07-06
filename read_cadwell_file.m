@@ -135,8 +135,11 @@ ampl_cell = cellfun(@(x)str2double(x.ampl), info_struct, 'UniformOutput', false)
 stim_ampl = cell2mat(ampl_cell)';
 
 if isfield(info_struct{1}, 'pw')
-	pw_cell = cellfun(@(x)str2double(x.pw), info_struct, 'UniformOutput', false);
-	stim_pw = cell2mat(pw_cell)';
+	% replace '1 k' with '1000'
+	pw_cell = cellfun(@(x)strrep(x.pw, '1 k', '1000'), info_struct, 'Uniformoutput', false);
+% 	pw_cell = cellfun(@(x)str2double(x.pw), info_struct, 'UniformOutput', false);
+% 	stim_pw = cell2mat(pw_cell)';
+	stim_pw = str2double(pw_cell)';
 else
 	stim_pw = [];
 end
