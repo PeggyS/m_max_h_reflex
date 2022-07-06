@@ -49,6 +49,8 @@ switch h_or_m
 	case 'm'
 		% create the figure with the data
 		h_fig = create_m_fig(info_struc, app.UITable, view_row);
+% 		disp(['row ' num2str(view_row) '  h_fig = ' ])
+% 		disp(h_fig)
 		% and store it in the uitable's userdata
 		app.UITable.UserData.h_mfigs(view_row) = h_fig;
 	case 'h'

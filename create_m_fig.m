@@ -92,13 +92,13 @@ h_ax.YLimMode = 'manual';
 if ~isnan(h_uitable.Data.mep_latency_ms(tbl_row))
 	mep_start_time = h_uitable.Data.mep_latency_ms(tbl_row) + h_fig.UserData.stim_offset; 
 end
-h_l = line([mep_start_time mep_start_time], h_ax.YLim, 'Color', 'b', 'LineWidth', 2, ...
+h_l = line(h_ax, [mep_start_time mep_start_time], h_ax.YLim, 'Color', 'b', 'LineWidth', 2, ...
 	'Tag', 'mwave_beg_line');
 draggable(h_l, 'h', [-inf inf], @dur_line_motionfcn);
 if ~isnan(h_uitable.Data.mep_dur_ms(tbl_row))
 	mep_end_time = mep_start_time + h_uitable.Data.mep_dur_ms(tbl_row);
 end
-h_l = line([mep_end_time mep_end_time], h_ax.YLim, 'Color', 'b', 'LineWidth', 2, ...
+h_l = line(h_ax, [mep_end_time mep_end_time], h_ax.YLim, 'Color', 'b', 'LineWidth', 2, ...
 	'Tag', 'mwave_end_line');
 draggable(h_l, 'h', [-inf inf], @dur_line_motionfcn);
 
@@ -114,9 +114,9 @@ h_ax.XLim(2) = max(t)*1000;
 
 % amplitude marker lines
 y_low = h_ax.YLim(1)+0.1*abs(h_ax.YLim(1));
-h_l = line(h_ax.XLim, [y_low y_low], 'Color', 'b', 'LineWidth', 2, ...
+h_l = line(h_ax, h_ax.XLim, [y_low y_low], 'Color', 'b', 'LineWidth', 2, ...
 	'Tag', 'ampl_low_line');
-hcmenu = uicontextmenu;
+hcmenu = uicontextmenu(h_fig);
 uimenu(hcmenu, 'Label', 'Move Troughs to This Line', 'Tag', 'menuTroughs2Me', ...
 	'Callback', {@menuLineMoveLines2Me_Callback, h_l});
 uimenu(hcmenu, 'Label', 'Return all to Baseline', 'Tag', 'menuReturnAll2Baseline', ...
@@ -127,9 +127,9 @@ h_l.UIContextMenu = hcmenu;
 draggable(h_l, 'v', [-inf inf], @ampl_line_motionfcn);
 
 y_hi = h_ax.YLim(2)-0.1*abs(h_ax.YLim(2));
-h_l = line(h_ax.XLim, [y_hi y_hi], 'Color', 'b', 'LineWidth', 2, ...
+h_l = line(h_ax, h_ax.XLim, [y_hi y_hi], 'Color', 'b', 'LineWidth', 2, ...
 	'Tag', 'ampl_hi_line');
-hcmenu = uicontextmenu;
+hcmenu = uicontextmenu(h_fig);
 uimenu(hcmenu, 'Label', 'Move Peaks to This Line', 'Tag', 'menuPeaks2Me', ...
 	'Callback', {@menuLineMoveLines2Me_Callback, h_l});
 uimenu(hcmenu, 'Label', 'Return all to Baseline', 'Tag', 'menuReturnAll2Baseline', ...
@@ -222,7 +222,8 @@ uicontrol(h_fig, ...
 		'Position', [0.8,0.1,0.165,0.094], ...
 		'FontSize', 14, ...
 		'Callback', {@pb_send_to_table_callback, h_uitable, tbl_row});
-	
+
+drawnow
 update_cursor_lines_amplitude(h_fig)
 update_duration(h_fig)
 update_ampl_and_auc(h_fig)
