@@ -29,6 +29,7 @@ dbparams = get_db_login_params(db_name);
 try
 	conn = dbConnect(dbparams.dbname, dbparams.user, dbparams.password, dbparams.serveraddr);
 catch e
+    beep
 	fprintf(1,'The error identifier was:\n%s', e.identifier);
 	fprintf(1,'Error message: \n%s', e.message);
 	side = 'left';
