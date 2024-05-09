@@ -105,7 +105,7 @@ draggable(h_l, 'h', [-inf inf], @dur_line_motionfcn);
 % axes
 xlabel('Time (msec)')
 ylabel('EMG (\muV)')
-title([info_struc.subject ' - ' info_struc.session ' - ' info_struc.side ' ' info_struc.muscle])
+title(h_ax, [info_struc.subject ' - ' info_struc.session ' - ' info_struc.side ' ' info_struc.muscle])
 h_ax.FontSize = 14;
 h_ax.LineWidth = 2;
 h_ax.YLimMode = 'manual';
