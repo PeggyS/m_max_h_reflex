@@ -20,6 +20,8 @@ switch full_subj(6:9)
 		db_name = 'tdcs_vgait';
 	case 'mytb'
 		db_name = 'myomo';
+	case 'uemp'
+		db_name = 'myopro_merit';
 end
 
 
