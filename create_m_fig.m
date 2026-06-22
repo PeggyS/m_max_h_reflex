@@ -80,12 +80,28 @@ for h_cnt = 1:length(h_lines)
 end
 drawnow
 
-% if uitable contains h info, then the stim offset is 0 (myopro study), otherwise it was
-% recorded with 10 ms offset (tdcs_vgait study)
-if any(contains(h_uitable.ColumnName, 'h_'))
-	h_fig.UserData.stim_offset = 0;
-else
-	h_fig.UserData.stim_offset = 10;
+% % if uitable contains h info, then the stim offset is 0 (myopro study), otherwise it was
+% % recorded with 10 ms offset (tdcs_vgait study)
+% if any(contains(h_uitable.ColumnName, 'h_'))
+% 	h_fig.UserData.stim_offset = 0;
+% else
+% 	h_fig.UserData.stim_offset = 10;
+% end
+
+% use info_struct.subject to determine the study and the offset used for
+% that study
+study_initials_cell = regexp(info_struc.subject, '[a-z]{4}', 'match');
+% turn the cell into a single string
+study_initials = study_initials_cell{:};
+switch study_initials
+	case 'tdvg'
+		h_fig.UserData.stim_offset = 10;
+	case 'uemp'
+		h_fig.UserData.stim_offset = 0;
+	otherwise
+		disp('creat_m_fig.m: stim_offset not defined for ' );
+		disp('using stim_offset = 0')
+		h_fig.UserData.stim_offset = 0;
 end
 % m-wave begin & end lines
 h_ax.YLimMode = 'manual';

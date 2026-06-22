@@ -26,7 +26,10 @@ end
 switch h_or_m
 	case 'm'
 		if width(app.UITable.Data) == 13
-			% then it is lower limb m_max data only - filename contains the muscle
+			% then it is m_max data only - for lower limb, filename
+			% contains the muscle only.
+			% For upper limb (bicep m-max but no h-reflex, could have
+			% '_inc' after the muscle.
 			csv_file = fullfile(app.SubjectFolderEditField.Value, session, [side '_' muscle '.csv']);
 		else
 			% m_max_h_reflex - view m-max data ( filename has 'inc')
@@ -38,7 +41,13 @@ switch h_or_m
 end
 if ~exist(csv_file, 'file')
 	disp(['no csv file named ' csv_file])
-	return
+	% try appending '_inc' to the end of the file name, but before .csv
+	csv_file = strrep(csv_file, '.csv', '_inc.csv');
+	% check for its existance
+	if ~exist(csv_file, 'file')
+		disp(['no csv file named ' csv_file])
+		return
+	end
 end
 
 % read in the data
