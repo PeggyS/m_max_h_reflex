@@ -40,7 +40,7 @@ switch h_or_m
 		csv_file = fullfile(app.SubjectFolderEditField.Value, session, [side '_' muscle '_dec.csv']);
 end
 if ~exist(csv_file, 'file')
-	disp(['no csv file named ' csv_file])
+% 	disp(['no csv file named ' csv_file])
 	% try appending '_inc' to the end of the file name, but before .csv
 	csv_file = strrep(csv_file, '.csv', '_inc.csv');
 	% check for its existance
